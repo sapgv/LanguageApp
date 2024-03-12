@@ -137,25 +137,24 @@ class SecondViewController: UIViewController {
         self.contentStackView.leadingAnchor.constraint(equalTo: scrollView.contentView.leadingAnchor, constant: 8).isActive = true
         self.contentStackView.topAnchor.constraint(equalTo: scrollView.contentView.topAnchor, constant: 8).isActive = true
         self.contentStackView.trailingAnchor.constraint(equalTo: scrollView.contentView.trailingAnchor, constant: -8).isActive = true
-//        self.contentStackView.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.contentView.bottomAnchor, constant: -8).isActive = true
         
         self.contentStackView.addArrangedSubview(collapsableButton)
         self.contentStackView.addArrangedSubview(languageVerticalStackView)
         self.contentStackView.addArrangedSubview(languageCollectionView)
         
-        self.collectiovViewHeightConstraint = self.languageCollectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
+        self.collectiovViewHeightConstraint = self.languageCollectionView.heightAnchor.constraint(lessThanOrEqualToConstant: 0)
         self.collectiovViewHeightConstraint?.isActive = true
         
         //MARK: - SeparateView
         
         self.scrollView.contentView.addSubview(separateView)
-        
+
         self.separateView.leadingAnchor.constraint(equalTo: scrollView.contentView.leadingAnchor, constant: 8).isActive = true
-        self.separateView.topAnchor.constraint(equalTo: languageCollectionView.bottomAnchor, constant: 8).isActive = true
+        self.separateView.topAnchor.constraint(equalTo: contentStackView.bottomAnchor, constant: 8).isActive = true
         self.separateView.trailingAnchor.constraint(equalTo: scrollView.contentView.trailingAnchor, constant: -8).isActive = true
-        self.separateView.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.contentView.bottomAnchor, constant: -8).isActive = true
-        
-        self.separateView.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        self.separateView.bottomAnchor.constraint(equalTo: scrollView.contentView.bottomAnchor, constant: -8).isActive = true
+
+        self.separateView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
     }
     
@@ -173,6 +172,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        print("content size \(languageCollectionView.contentSize.height)")
         self.collectiovViewHeightConstraint?.constant = languageCollectionView.contentSize.height
     }
     
