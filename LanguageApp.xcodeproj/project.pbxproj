@@ -13,6 +13,14 @@
 		1039B6BC2B9F762100F806D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039B6BA2B9F762100F806D5 /* Main.storyboard */; };
 		1039B6BE2B9F762100F806D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1039B6BD2B9F762100F806D5 /* Assets.xcassets */; };
 		1039B6C12B9F762100F806D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1039B6BF2B9F762100F806D5 /* LaunchScreen.storyboard */; };
+		1039B6CA2B9F786700F806D5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039B6C92B9F786700F806D5 /* SecondViewController.swift */; };
+		1039B6CD2B9F7A5500F806D5 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039B6CC2B9F7A5500F806D5 /* ScrollView.swift */; };
+		1039B6CF2B9F7F1B00F806D5 /* CollapsableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039B6CE2B9F7F1B00F806D5 /* CollapsableButton.swift */; };
+		1039B6D12B9F857200F806D5 /* LanguageLabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039B6D02B9F857200F806D5 /* LanguageLabelStackView.swift */; };
+		1039B6D32B9F86CD00F806D5 /* LanguageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039B6D22B9F86CD00F806D5 /* LanguageCollectionView.swift */; };
+		1039B6D52B9F883D00F806D5 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039B6D42B9F883D00F806D5 /* LanguageModel.swift */; };
+		104CB2522BA010D4005B3D47 /* LanguageVerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104CB2512BA010D4005B3D47 /* LanguageVerticalStackView.swift */; };
+		107D15572B9F91F200D8AC2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D15562B9F91F200D8AC2A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		1039B6BD2B9F762100F806D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1039B6C02B9F762100F806D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1039B6C22B9F762100F806D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1039B6C92B9F786700F806D5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1039B6CC2B9F7A5500F806D5 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		1039B6CE2B9F7F1B00F806D5 /* CollapsableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableButton.swift; sourceTree = "<group>"; };
+		1039B6D02B9F857200F806D5 /* LanguageLabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageLabelStackView.swift; sourceTree = "<group>"; };
+		1039B6D22B9F86CD00F806D5 /* LanguageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCollectionView.swift; sourceTree = "<group>"; };
+		1039B6D42B9F883D00F806D5 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
+		104CB2512BA010D4005B3D47 /* LanguageVerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVerticalStackView.swift; sourceTree = "<group>"; };
+		107D15562B9F91F200D8AC2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,63 @@
 		1039B6B32B9F762100F806D5 /* LanguageApp */ = {
 			isa = PBXGroup;
 			children = (
+				107D15552B9F91DC00D8AC2A /* Extensions */,
+				1039B6C82B9F763F00F806D5 /* SupportingFiles */,
+				1039B6D62B9F884600F806D5 /* ViewControllers */,
+				1039B6D72B9F885300F806D5 /* Model */,
+				1039B6CB2B9F7A4700F806D5 /* Components */,
+			);
+			path = LanguageApp;
+			sourceTree = "<group>";
+		};
+		1039B6C82B9F763F00F806D5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				1039B6B42B9F762100F806D5 /* AppDelegate.swift */,
 				1039B6B62B9F762100F806D5 /* SceneDelegate.swift */,
-				1039B6B82B9F762100F806D5 /* ViewController.swift */,
 				1039B6BA2B9F762100F806D5 /* Main.storyboard */,
 				1039B6BD2B9F762100F806D5 /* Assets.xcassets */,
 				1039B6BF2B9F762100F806D5 /* LaunchScreen.storyboard */,
 				1039B6C22B9F762100F806D5 /* Info.plist */,
 			);
-			path = LanguageApp;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		1039B6CB2B9F7A4700F806D5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1039B6CC2B9F7A5500F806D5 /* ScrollView.swift */,
+				1039B6CE2B9F7F1B00F806D5 /* CollapsableButton.swift */,
+				1039B6D02B9F857200F806D5 /* LanguageLabelStackView.swift */,
+				1039B6D22B9F86CD00F806D5 /* LanguageCollectionView.swift */,
+				104CB2512BA010D4005B3D47 /* LanguageVerticalStackView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1039B6D62B9F884600F806D5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1039B6B82B9F762100F806D5 /* ViewController.swift */,
+				1039B6C92B9F786700F806D5 /* SecondViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1039B6D72B9F885300F806D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1039B6D42B9F883D00F806D5 /* LanguageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		107D15552B9F91DC00D8AC2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				107D15562B9F91F200D8AC2A /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +202,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1039B6CF2B9F7F1B00F806D5 /* CollapsableButton.swift in Sources */,
+				1039B6D52B9F883D00F806D5 /* LanguageModel.swift in Sources */,
+				1039B6CA2B9F786700F806D5 /* SecondViewController.swift in Sources */,
+				1039B6D32B9F86CD00F806D5 /* LanguageCollectionView.swift in Sources */,
 				1039B6B92B9F762100F806D5 /* ViewController.swift in Sources */,
+				107D15572B9F91F200D8AC2A /* Extensions.swift in Sources */,
 				1039B6B52B9F762100F806D5 /* AppDelegate.swift in Sources */,
+				1039B6D12B9F857200F806D5 /* LanguageLabelStackView.swift in Sources */,
 				1039B6B72B9F762100F806D5 /* SceneDelegate.swift in Sources */,
+				1039B6CD2B9F7A5500F806D5 /* ScrollView.swift in Sources */,
+				104CB2522BA010D4005B3D47 /* LanguageVerticalStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,12 +361,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KTV28US9SX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LanguageApp/Info.plist;
+				INFOPLIST_FILE = LanguageApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,12 +390,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KTV28US9SX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LanguageApp/Info.plist;
+				INFOPLIST_FILE = LanguageApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
