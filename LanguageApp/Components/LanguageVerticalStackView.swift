@@ -71,7 +71,7 @@ extension LanguageVerticalStackView {
         }
         
         private func commonInit() {
-            self.backgroundColor = .systemGray6
+            self.backgroundColor = .systemGray3
         }
         
     }

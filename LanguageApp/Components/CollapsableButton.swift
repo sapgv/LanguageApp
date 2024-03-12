@@ -55,7 +55,7 @@ extension CollapsableButton {
         self.backgroundColor = .white
         self.clipsToBounds = true
         self.layer.cornerRadius = 8
-        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderColor = UIColor.systemGray3.cgColor
         self.layer.borderWidth = 1
         self.addTarget(self, action: #selector(tap), for: .touchUpInside)
     }

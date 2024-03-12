@@ -25,6 +25,8 @@ class SecondViewController: UIViewController {
         }
     }
     
+    private var collectiovViewHeightConstraint: NSLayoutConstraint?
+    
     var items: [LanguageModel] {
         
         return [
@@ -129,7 +131,10 @@ class SecondViewController: UIViewController {
         self.contentStackView.addArrangedSubview(languageVerticalStackView)
         self.contentStackView.addArrangedSubview(languageCollectionView)
         
-        self.languageCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        self.collapsableButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
+        self.collectiovViewHeightConstraint = self.languageCollectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
+        self.collectiovViewHeightConstraint?.isActive = true
         
     }
     
@@ -143,6 +148,11 @@ class SecondViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.collectiovViewHeightConstraint?.constant = languageCollectionView.contentSize.height
     }
     
 }
@@ -162,13 +172,13 @@ extension SecondViewController: LanguageCollectionViewDataSource {
         }
         
         private func commonInit() {
-            self.backgroundColor = .systemGray6
-//            self.isUserInteractionEnabled = false
+            self.backgroundColor = .white
             self.axis = .vertical
             self.distribution = .fill
             self.alignment = .fill
             self.spacing = 8
             self.layer.cornerRadius = 8
+            self.clipsToBounds = true
         }
         
     }

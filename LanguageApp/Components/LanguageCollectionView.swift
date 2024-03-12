@@ -47,27 +47,18 @@ final class LanguageCollectionView: UICollectionView, UICollectionViewDataSource
             cell.setup(languageModel: languageModel)
         }
         
-        cell.backgroundColor = .yellow
-        
         return cell
         
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: Int.random(in: 40...200), height: 44)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 8
-//    }
-////
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 8
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        16
+    }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return .zero
-//    }
 }
     
 extension LanguageCollectionView {
@@ -80,12 +71,20 @@ extension LanguageCollectionView {
         
         override init(frame: CGRect) {
             super.init(frame: frame)
+            self.commonInit()
             self.layout()
         }
         
         required init?(coder: NSCoder) {
             super.init(coder: coder)
+            self.commonInit()
             self.layout()
+        }
+        
+        private func commonInit() {
+            self.layer.cornerRadius = 8
+            self.layer.borderColor = UIColor.systemGray3.cgColor
+            self.layer.borderWidth = 1
         }
         
         private func layout() {
@@ -99,6 +98,8 @@ extension LanguageCollectionView {
             self.languageStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
             self.languageStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8).isActive = true
             
+            self.languageStackView.heightAnchor.constraint(equalToConstant: 44 - 16).isActive = true
+            
         }
         
         func setup(languageModel: LanguageModel) {
@@ -108,24 +109,6 @@ extension LanguageCollectionView {
             
         }
         
-        //forces the system to do one layout pass
-        var isHeightCalculated: Bool = false
-
-        override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-            //Exhibit A - We need to cache our calculation to prevent a crash.
-            if !isHeightCalculated {
-                setNeedsLayout()
-                layoutIfNeeded()
-                let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
-                var newFrame = layoutAttributes.frame
-                newFrame.size.width = CGFloat(ceilf(Float(size.width)))
-                layoutAttributes.frame = newFrame
-                isHeightCalculated = true
-            }
-            return layoutAttributes
-        }
-        
     }
-    
     
 }
