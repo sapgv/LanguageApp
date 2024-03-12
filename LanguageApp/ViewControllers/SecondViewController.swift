@@ -19,6 +19,8 @@ class SecondViewController: UIViewController {
     
     private let contentStackView = ContentStackView()
     
+    private let separateView = UIView()
+    
     private var expanded: Bool = false {
         didSet {
             self.updateVisibility()
@@ -73,6 +75,7 @@ class SecondViewController: UIViewController {
         self.setupScrollView()
         self.setupCollapsableButton()
         self.setupCollectionView()
+        self.setupSeparateView()
         self.layout()
         self.languageVerticalStackView.update(items: self.items)
         self.updateVisibility()
@@ -100,6 +103,10 @@ class SecondViewController: UIViewController {
         self.languageCollectionView.languageCollectionViewDataSource = self
         self.languageCollectionView.reloadData()
     }
+
+    private func setupSeparateView() {
+        self.separateView.backgroundColor = .gray
+    }
     
     @objc
     private func closeViewController() {
@@ -110,6 +117,7 @@ class SecondViewController: UIViewController {
         
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        self.separateView.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(scrollView)
         
@@ -118,6 +126,10 @@ class SecondViewController: UIViewController {
         self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
         self.scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         
+        //MARK: - CollapsableButton
+        
+        self.collapsableButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
         //MARK: - ContentStackView
         
         self.scrollView.contentView.addSubview(contentStackView)
@@ -125,16 +137,25 @@ class SecondViewController: UIViewController {
         self.contentStackView.leadingAnchor.constraint(equalTo: scrollView.contentView.leadingAnchor, constant: 8).isActive = true
         self.contentStackView.topAnchor.constraint(equalTo: scrollView.contentView.topAnchor, constant: 8).isActive = true
         self.contentStackView.trailingAnchor.constraint(equalTo: scrollView.contentView.trailingAnchor, constant: -8).isActive = true
-        self.contentStackView.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.contentView.bottomAnchor, constant: -8).isActive = true
+//        self.contentStackView.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.contentView.bottomAnchor, constant: -8).isActive = true
         
         self.contentStackView.addArrangedSubview(collapsableButton)
         self.contentStackView.addArrangedSubview(languageVerticalStackView)
         self.contentStackView.addArrangedSubview(languageCollectionView)
         
-        self.collapsableButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        
         self.collectiovViewHeightConstraint = self.languageCollectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         self.collectiovViewHeightConstraint?.isActive = true
+        
+        //MARK: - SeparateView
+        
+        self.scrollView.contentView.addSubview(separateView)
+        
+        self.separateView.leadingAnchor.constraint(equalTo: scrollView.contentView.leadingAnchor, constant: 8).isActive = true
+        self.separateView.topAnchor.constraint(equalTo: languageCollectionView.bottomAnchor, constant: 8).isActive = true
+        self.separateView.trailingAnchor.constraint(equalTo: scrollView.contentView.trailingAnchor, constant: -8).isActive = true
+        self.separateView.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.contentView.bottomAnchor, constant: -8).isActive = true
+        
+        self.separateView.heightAnchor.constraint(equalToConstant: 2).isActive = true
         
     }
     

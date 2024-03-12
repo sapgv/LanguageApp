@@ -26,6 +26,7 @@ final class LanguageCollectionView: UICollectionView, UICollectionViewDataSource
     }
     
     private func setupCollectionView() {
+        self.backgroundColor = .yellow
         self.dataSource = self
         self.delegate = self
         self.register(Cell.self, forCellWithReuseIdentifier: Cell.id)
@@ -82,6 +83,7 @@ extension LanguageCollectionView {
         }
         
         private func commonInit() {
+            self.contentView.backgroundColor = .white
             self.layer.cornerRadius = 8
             self.layer.borderColor = UIColor.systemGray3.cgColor
             self.layer.borderWidth = 1
